@@ -5,10 +5,19 @@
 body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;color:var(--text);background:var(--bg);line-height:1.4}
 .container{max-width:900px;margin:0 auto;padding:1rem}
 .site-header{background:var(--accent-2);color:white;padding:1rem 0;text-align:center}
+.site-header{position:relative}
 .site-header h1{margin:0;font-size:2rem}
 .site-header .tag{opacity:.95;font-size:1.1rem;margin-top:1rem}
 .site-header nav{margin-top:.5rem}
 .site-header nav a{display:inline-block;border:2px solid white;color:white;padding:0.5rem 1rem;border-radius:6px;text-decoration:none;margin:0.5rem auto}
+
+/* Top-right header action (About button) */
+.header-actions{position:absolute;right:1rem;top:50%;transform:translateY(-50%)}
+.header-actions .about-btn{background:#e6e6e6;color:var(--accent-2);padding:0.45rem 0.85rem;border-radius:6px;text-decoration:none;border:1px solid rgba(0,0,0,0.08);font-weight:600}
+
+@media(max-width:699px){
+  .header-actions{position:static;text-align:center;margin-top:.5rem}
+}
 .hero{padding:2rem 0;text-align:center}
 .btn{display:inline-block;background:var(--accent);color:white;padding:.6rem 1rem;border-radius:6px;text-decoration:none}
 .btn.large{padding:1rem 1.2rem;font-weight:600}
@@ -35,6 +44,68 @@ img{max-width:100%;height:auto;display:block}
   box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.calendar-month {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(2,6,23,.06);
+}
+
+.calendar-month h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.calendar-table th {
+  background: var(--accent-2);
+  color: white;
+  padding: 0.75rem;
+  font-weight: 600;
+}
+
+.calendar-table td {
+  padding: 0.5rem;
+  border: 1px solid #e0e7f1;
+  min-height: 12rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.calendar-table td:empty {
+  background: #f7fbff;
+}
+
+/* About page layout */
+.about-layout{
+  display:flex;
+  gap:1.5rem;
+  align-items:flex-start;
+}
+.about-text{flex:1}
+.about-image{flex:0 0 340px;display:flex;align-items:flex-start;justify-content:center}
+.about-image img{max-width:100%;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.about-running{max-width:900px;margin:1.5rem auto;text-align:center}
+
+@media(max-width:699px){
+  .about-layout{flex-direction:column}
+  .about-image{order:2}
+  .about-text{order:1}
+  .about-image img{width:100%;height:auto}
+}
+
 @media(min-width:700px){
   .site-header .container{display:block;text-align:center}
   .hero{padding:3rem 0}
@@ -43,3 +114,16 @@ img{max-width:100%;height:auto;display:block}
 @media(max-width:699px){
   .hero img{max-height:40vh}
 }
+
+/* Program image under Program Details */
+.program-image{margin-top:1rem;text-align:center}
+.program-image img{width:100%;max-width:680px;height:auto;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.08);display:block;margin:0 auto}
+
+/* Countdown styles */
+.countdown{max-width:720px;margin:1rem auto;padding:1rem;text-align:center;background:#296EDD;color:white;border-radius:8px;box-shadow:0 1px 3px rgba(2,6,23,.06)}
+.countdown h3{margin:.25rem 0;color:white}
+.countdown-number{font-size:3rem;font-weight:700;color:white;margin:0.25rem 0}
+.countdown p{margin:0}
+@media(max-width:699px){.countdown-number{font-size:2.2rem}}
+
+.countdown-unit{color:white;margin-top:0.25rem}

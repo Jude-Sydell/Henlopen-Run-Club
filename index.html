@@ -10,9 +10,11 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <h1>Summer Run Club</h1>
-      <p class="tag">For 6th–8th Graders • Twice weekly • Builds to a self-hosted Fundraising 5K</p>
-      <!-- Top navigation removed as requested -->
+      <h1>Henlopen Run Club</h1>
+      <p class="tag">For 6th–8th Graders • Twice weekly • Builds to a self-hosted fundraising 5K</p>
+      <div class="header-actions">
+        <a class="btn about-btn" href="about.html">About the Developer</a>
+      </div>
     </div>
   </header>
   <img src="logo.png" alt="logo">
@@ -24,10 +26,19 @@
         <p class="cta-row">
           <a class="btn large" href="contact.html">Contact to Sign Up</a>
           <a class="btn large" href="why-choose-us.html">Why choose us?</a>
+          <a class="btn large" href="calendar.html">Calendar</a>
         </p>
       </div>
     </section>
-    <section id="program" class="container card">
+      <div class="container">
+        <div id="countdown" class="countdown card" aria-live="polite">
+          <h3>Countdown to 5K</h3>
+          <div id="daysRemaining" class="countdown-number">—</div>
+          <p class="countdown-unit">days</p>
+        </div>
+      </div>
+    
+      <section id="program" class="container card">
       <h3>Program Details</h3>
       <ul>
         <li>Run by: Jude B. Sydell and Cape Henlopen Cross Country team members</li>
@@ -40,6 +51,12 @@
       <p class="muted">We group participants by pacing/ability so everyone makes steady progress in a supportive environment.</p>
     </section>
 
+    <div class="container">
+      <div class="program-image">
+        <img src="all.JPG" alt="Program session">
+      </div>
+    </div>
+
     <section id="race" class="container card">
       <h3>End-of-Summer 5K</h3>
       <p>A volunteer-supported, family-friendly 5K celebrates what participants have built. Date and exact location will be shared mid-summer.</p>
@@ -48,7 +65,7 @@
 
     <section id="schedule" class="container card">
       <h3>Schedule & Locations</h3>
-      <p>Typical meeting days will be designated before the beginning of summer. Meeting spot will be sent to parents once confirmed and approved.</p>
+      <p>Meeting days and location have been set and are available to view on the calender</p>
     </section>
 
     
@@ -63,6 +80,22 @@
       <p>&copy; Website design and club organization by Jude Sydell</p>
     </div>
   </footer>
+
+  <script>
+    (function(){
+      const target = new Date('2026-09-27');
+      const daysEl = document.getElementById('daysRemaining');
+      function updateDays(){
+        const now = new Date();
+        const utcNow = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+        const utcTarget = Date.UTC(target.getFullYear(), target.getMonth(), target.getDate());
+        let days = Math.max(0, Math.floor((utcTarget - utcNow)/(24*60*60*1000)));
+        daysEl.textContent = days;
+      }
+      updateDays();
+      setInterval(updateDays,60*1000);
+    })();
+  </script>
 
 </body>
 </html>
