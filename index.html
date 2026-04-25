@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Henlopen Run Club</title>
+  <meta name="description" content="Henlopen Run Club for 6th–8th graders — fun, safe summer running that builds to a 5K.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="Henlopen Run Club Logo">
+      <span>Henlopen Run Club</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="why-choose-us.html">Why Us</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="about.html">About</a>
+      <a class="nav-btn" href="https://forms.gle/4efgLornvroCqrkL7" target="_blank">Sign Up</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero home-hero">
+      <div class="hero-content">
+        <p class="eyebrow">For 6th–8th Graders</p>
+        <h1>Train smarter. Run stronger. Build confidence.</h1>
+        <p class="hero-text">
+          A fun, safe, student-athlete-led summer running club designed to help middle school runners improve fitness, confidence, and community.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn primary" href="https://forms.gle/4efgLornvroCqrkL7" target="_blank">Sign Up</a>
+          <a class="btn secondary" href="calendar.html">View Calendar</a>
+        </div>
+
+        <div class="stats">
+          <div><strong>2x</strong><span>Weekly Sessions</span></div>
+          <div><strong>6–8</strong><span>Grade Level</span></div>
+          <div><strong>5K</strong><span>Final Goal</span></div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="all.JPG" alt="Cape Henlopen runners at a race">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Program Overview</p>
+        <h2>Built for every type of runner</h2>
+        <p>Whether someone is brand new or already competitive, the club is structured to help each runner improve safely.</p>
+      </div>
+
+      <div class="grid three">
+        <div class="feature-card">
+          <h3>Supportive Coaching</h3>
+          <p>Led by Jude B. Sydell and Cape Henlopen Cross Country team members.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Smart Training</h3>
+          <p>Each session includes warm-up, drills, running, and cooldown.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Real Progress</h3>
+          <p>Runners build toward a fun end-of-summer celebratory 5K.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-section">
+      <div>
+        <p class="eyebrow">Countdown</p>
+        <h2>End-of-Summer 5K</h2>
+        <p>
+          The season finishes with a family-friendly 5K to celebrate the progress runners have made throughout the summer.
+        </p>
+      </div>
+
+      <div id="countdown" class="countdown">
+        <span id="daysRemaining">—</span>
+        <p>days until race day</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">What a session looks like</p>
+        <h2>Simple, organized, and beginner-friendly</h2>
+        <p>Every practice follows a clear structure so runners know what to expect and can improve without feeling overwhelmed.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>01</span>
+          <h3>Warm-up</h3>
+          <p>Easy movement to get ready safely.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>02</span>
+          <h3>Drills</h3>
+          <p>Running form, coordination, and speed basics.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>03</span>
+          <h3>Run Segment</h3>
+          <p>Grouped by ability so each runner gets the right challenge.</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>04</span>
+          <h3>Cool Down</h3>
+          <p>Stretching, recovery, and quick check-in before pickup.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-panel">
+      <p class="eyebrow">Ready to join?</p>
+      <h2>Start building toward the 5K.</h2>
+      <p>Sign up now or check the calendar to see the full summer schedule.</p>
+
+      <div class="hero-buttons">
+        <a class="btn primary" href="https://forms.gle/4efgLornvroCqrkL7" target="_blank">Sign Up</a>
+        <a class="btn secondary" href="calendar.html">See Schedule</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Website design and club organization by Jude Sydell</p>
+  </footer>
+
+  <script>
+    const target = new Date("2026-09-27");
+    const daysEl = document.getElementById("daysRemaining");
+
+    function updateDays() {
+      const now = new Date();
+      const utcNow = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+      const utcTarget = Date.UTC(target.getFullYear(), target.getMonth(), target.getDate());
+      const days = Math.max(0, Math.floor((utcTarget - utcNow) / 86400000));
+      daysEl.textContent = days;
+    }
+
+    updateDays();
+    setInterval(updateDays, 60000);
+  </script>
+</body>
+</html>
